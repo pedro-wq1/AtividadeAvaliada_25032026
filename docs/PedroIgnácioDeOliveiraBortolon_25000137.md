@@ -8,32 +8,27 @@ Data: *25/03/2026*
 ---
 
 # 1. Definição do MVP
-Meu MVP está focado na parte de vendas a prazo e no controle de contas a receber na farmácia. 
-A ideia é garantir que toda venda com pagamento futuro seja registrada de maneira correta e acompanhada pelo sistema.
-
-Dentro desse escopo, o sistema permite identificar ou cadastras os clientes, registrar as vendas, definir quando a venda será a prazo e gerar automaticamente uma conta a receber com data de vencimento e status. 
-Além disso o sistema possibilita consultar essas contas e registrar seus pagamentos.
-
-Fora disso ficam algumas funcionalidade do sistema que não fazem parte desse MVP, como o controle completo de estoque, o gerenciamento de compras com fornecedores, contas a pagar e relatórios gerenciais mais complexos. 
-Essas partes não foram incluidas para manter o focoem um fluxo especifico.
-
-Minha escolha foi essa pois o controle de vendas a prazo é uma parte crítica da operação, já que impacta diretamente o fluxo de caixa e exige organização para evitar atrasos e problemas.
+Meu MVP está focado na parte de vendas a prazo e no controle de contas a receber na farmácia. A ideia é garantir que toda venda com pagamento futuro seja registrada de maneira correta e acompanhada pelo sistema. O sistema permite identificar ou cadastras os clientes, registrar as vendas, definir quando a venda será a prazo e gerar automaticamente uma conta a receber com data de vencimento e status. Além disso o sistema possibilita consultar essas contas e registrar seus pagamentos. Fora disso ficam algumas funcionalidade do sistema que não fazem parte desse MVP, como o controle completo de estoque, o gerenciamento de compras com fornecedores, contas a pagar e relatórios mais complexos. Essas partes não foram incluidas para manter o focoem um fluxo especifico. Minha escolha foi essa pois o controle de vendas a prazo é uma parte crítica da operação, já que impacta diretamente o fluxo de caixa e exige organização para evitar atrasos e problemas.
 
 ---
 
 # 2. Regras de Negócio (mínimo: 5)
 Liste e descreva **cada RN** de forma clara.
 
-**RN01 — Toda venda a prazo deve gerar uma conta a receber**
-         O sistema deve criar um lançamento financeiro automaticamente ao registrar uma venda a prazo.
-**RN02 — Contas devem possuir data de vencimento obrigatória**
-         Nenhuma conta a receber pode ser registrada sem data de vencimento.
-**RN03 — Contas vencidas devem ser marcadas como atrasadas**
-         O sistema deve automaticamente mudar o status para "Atrasada" quando ultrapassar a data de vencimento.
-**RN04 — Cliente é obrigatório para venda a prazo**
-         Não pode realizar vendas a prazo sem cliente identificado.
-**RN05 — Pagamento altera o status da conta**
-         Quando o pagamento for registrado, a conta deve ser marcada como "Recebida".
+**RN01 — Toda venda a prazo deve gerar uma conta a receber**  
+         O sistema deve criar um lançamento financeiro automaticamente ao registrar uma venda a prazo.  
+         
+**RN02 — Contas devem possuir data de vencimento obrigatória**  
+         Nenhuma conta a receber pode ser registrada sem data de vencimento.  
+         
+**RN03 — Contas vencidas devem ser marcadas como atrasadas**  
+         O sistema deve automaticamente mudar o status para "Atrasada" quando ultrapassar a data de vencimento.  
+         
+**RN04 — Cliente é obrigatório para venda a prazo**  
+         Não pode realizar vendas a prazo sem cliente identificado.  
+         
+**RN05 — Pagamento altera o status da conta**  
+         Quando o pagamento for registrado, a conta deve ser marcada como "Recebida".  
 
 ---
 
@@ -55,22 +50,26 @@ Liste os requisitos funcionais do seu MVP.
 Liste os RNFs do sistema conforme seu MVP.
 
 **RNF01 — Desempenho**
-          O sistema deve atualizar o status das contas de forma automatica, sem atrapalhar a performance.
+          O sistema deve atualizar o status das contas de forma automatica, sem atrapalhar a performance.  
+          
 **RNF02 — Segurança**
-          Somente usuários autorizados podem acessar informações financeiras.
+          Somente usuários autorizados podem acessar informações financeiras.  
+          
 **RNF03 — Confiabilidade**
-          O sistema deve garantir que os dados financeiros não sejam perdidos.
+          O sistema deve garantir que os dados financeiros não sejam perdidos.  
+          
 **RNF04 — Usabilidade**
-          As operações financeiras devem ser simples e rápidas para o usuário.
+          As operações financeiras devem ser simples e rápidas para o usuário.  
+          
 
 ---
 
 # 5. Casos de Uso (mínimo: 10)
 ### Inserir **diagrama de casos de uso geral**, demonstrando claramente:
-- os 10 casos
-- relação entre eles e atores
-- pelo menos 3 includes
-- pelo menos 3 extends
+- os 10 casos  
+- relação entre eles e atores  
+- pelo menos 3 includes  
+- pelo menos 3 extends  
 
 <img width="409" height="869" alt="image" src="https://github.com/user-attachments/assets/127e2739-81a9-4471-8947-b13e04e48f56" />
 
@@ -99,7 +98,7 @@ Liste os RNFs do sistema conforme seu MVP.
 - **Include: - ** 
 - **Extend: Registrar venda a prazo**  
 
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+<img width="133" height="306" alt="image" src="https://github.com/user-attachments/assets/54dd84cc-9b91-4612-99fd-d3d7824d713a" />
 
 ---
 
@@ -121,7 +120,7 @@ Liste os RNFs do sistema conforme seu MVP.
 - **Include: - ** 
 - **Extend: Cadastrar cliente**  
 
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+<img width="280" height="314" alt="image" src="https://github.com/user-attachments/assets/9a0c6431-7ac4-4027-b85d-070c5da3747c" />
 
 ---
 
@@ -143,7 +142,7 @@ Liste os RNFs do sistema conforme seu MVP.
 - **Include: - ** 
 - **Extend: - **  
 
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+<img width="250" height="314" alt="image" src="https://github.com/user-attachments/assets/1c671570-0553-4ad9-90d8-a7a227b91e1f" />
 
 ---
 
@@ -169,7 +168,7 @@ Liste os RNFs do sistema conforme seu MVP.
 - **Include: Identificar cliente, Gerar conta a receber** 
 - **Extend: Registrar venda**  
 
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+<img width="301" height="546" alt="image" src="https://github.com/user-attachments/assets/6e907bab-2ba8-4e20-ad49-0b3ebf466a52" />
 
 ---
 
@@ -191,9 +190,11 @@ Liste os RNFs do sistema conforme seu MVP.
 - **Include: - ** 
 - **Extend: - **  
 
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+<img width="180" height="306" alt="image" src="https://github.com/user-attachments/assets/a5938d2c-3a5a-4a06-9ec2-c1e8bb6e9b04" />
 
----## **UC06 — Consultar contas a receber**
+---
+
+## **UC06 — Consultar contas a receber**
 **Ator(es): Financeiro**  
 **Descrição: Visualiza contas**  
 **Pré-condições: Usuário logado**  
@@ -211,9 +212,11 @@ Liste os RNFs do sistema conforme seu MVP.
 - **Include: - ** 
 - **Extend: - **  
 
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+<img width="189" height="400" alt="image" src="https://github.com/user-attachments/assets/ec756874-0888-4300-aed2-27f27cdbebc7" />
 
----## **UC07 — Registrar pagamento**
+---
+
+## **UC07 — Registrar pagamento**
 **Ator(es): Financeiro**  
 **Descrição: Registra pagamento**  
 **Pré-condições: Conta existente**  
@@ -232,9 +235,11 @@ Liste os RNFs do sistema conforme seu MVP.
 - **Include: Atualizar status** 
 - **Extend: Emitir comprovante**  
 
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+<img width="254" height="284" alt="image" src="https://github.com/user-attachments/assets/55c17959-77bf-4e5e-90e6-60a7d901e6dc" />
 
----## **UC08 — Atualizar status da conta**
+---
+
+## **UC08 — Atualizar status da conta**
 **Ator(es): Sistema**  
 **Descrição: Atualiza status**  
 **Pré-condições: Conta existente**  
@@ -251,16 +256,18 @@ Liste os RNFs do sistema conforme seu MVP.
 - **Include: - ** 
 - **Extend: - **  
 
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+<img width="413" height="322" alt="image" src="https://github.com/user-attachments/assets/ff28391c-7725-4554-85d0-9a2d7adea77f" />
 
----## **UC09 — Listar contas vencidas**
+---
+
+## **UC09 — Listar contas vencidas**
 **Ator(es): Financeiro**  
 **Descrição: Mostra contas atrasadas**  
 **Pré-condições: Sistema ativo**  
 **Pós-condições: Lista exibida**  
 
 ### Fluxo Principal
-1. Acessa opção
+1. Acessa sistema
 2. Sistema filtra vencidas
 3. Exibe lista
 
@@ -271,9 +278,11 @@ Liste os RNFs do sistema conforme seu MVP.
 - **Include: - ** 
 - **Extend: - **  
 
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+<img width="241" height="314" alt="image" src="https://github.com/user-attachments/assets/148a6c1b-2ea0-4de8-a19d-8b1ebd51282c" />
 
----## **UC10 — Emitir comprovante de pagamento**
+---
+
+## **UC10 — Emitir comprovante de pagamento**
 **Ator(es): Financeiro**  
 **Descrição: Gerar comprovante**  
 **Pré-condições: Pagamento realizado**  
@@ -291,7 +300,7 @@ Liste os RNFs do sistema conforme seu MVP.
 - **Include: - ** 
 - **Extend: - **  
 
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+<img width="216" height="314" alt="image" src="https://github.com/user-attachments/assets/e2343ef1-8bba-4d35-8bda-3bf42f3b6013" />
 
 ---
 
