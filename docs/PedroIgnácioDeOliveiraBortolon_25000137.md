@@ -77,33 +77,222 @@ Liste os RNFs do sistema conforme seu MVP.
 ---
 
 # 6. Documentação dos Casos de Uso
-Para **cada caso de uso**, utilize o template abaixo:
+
 ---
 
-## **UCXX — Nome do Caso de Uso**
-**Ator(es):**  
-**Descrição:**  
-**Pré-condições:**  
-**Pós-condições:**  
+## **UC01 — Registrar vendas**
+**Ator(es): Atendente**  
+**Descrição: Registra uma venda no sistema**  
+**Pré-condições: Usuário logado**  
+**Pós-condições: Venda registrada**  
 
 ### Fluxo Principal
-1.  
-2.  
-3.  
-4.  
+1. Atendente inicia a venda 
+2. Informa os itens
+3. Sistema calcula o valor
+4. Venda é registrada
 
 ### Fluxos Alternativos / Exceções
-- FA01 —  
-- FA02 —  
+- FA01 —  Dados inválidos -> sistema solicita correção
 
 ### Relacionamentos
-- **Include:** (listar quando aplicável)  
-- **Extend:** (listar quando aplicável)  
+- **Include: - ** 
+- **Extend: Registrar venda a prazo**  
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
 ---
 
-> Repita essa estrutura para **todos os seus casos de uso** (mínimo 10).
+## **UC02 — Identificar cliente**
+**Ator(es): Atendente**  
+**Descrição: Localiza cliente no sistema**  
+**Pré-condições: Nenhuma**  
+**Pós-condições: Cliente identificado**  
+
+### Fluxo Principal
+1. Informar CPF e nome
+2. Sistema busca cliente
+3. Exibe o resultado
+
+### Fluxos Alternativos / Exceções
+- FA01 —  Cliente não encontrado
+
+### Relacionamentos
+- **Include: - ** 
+- **Extend: Cadastrar cliente**  
+
+### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+---
+
+## **UC03 — Cadastrar cliente**
+**Ator(es): Atendente**  
+**Descrição: Cadastrar novo cliente**  
+**Pré-condições: Cliente não encontrado**  
+**Pós-condições: Cliente salvo**  
+
+### Fluxo Principal
+1. Inserir dados
+2. Validar dados
+3. Salvar
+
+### Fluxos Alternativos / Exceções
+- FA01 —  Dados inválidos
+
+### Relacionamentos
+- **Include: - ** 
+- **Extend: - **  
+
+### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+---
+
+## **UC04 — Registrar vendas a prazo**
+**Ator(es): Atendente**  
+**Descrição: Registra venda com pagamento futuro**  
+**Pré-condições: Cliente identificado**  
+**Pós-condições: Conta gerada**  
+
+### Fluxo Principal
+1. Atendente inicia a venda 
+2. Identifica o cliente
+3. Insere os itens
+4. Escolhe pagamento a prazo
+5. Define o vencimento
+6. Confirma
+
+### Fluxos Alternativos / Exceções
+- FA01 — Cliente não cadastrado
+- FA02 — Data inválida 
+
+### Relacionamentos
+- **Include: Identificar cliente, Gerar conta a receber** 
+- **Extend: Registrar venda**  
+
+### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+---
+
+## **UC05 — Gerar conta a receber**
+**Ator(es): Sistema**  
+**Descrição: Cria registro financeiro da venda a prazo**  
+**Pré-condições: Venda a prazo realizada**  
+**Pós-condições: Conta registrada**  
+
+### Fluxo Principal
+1. Receber dados da venda 
+2. Criar conta
+3. Definir status como "Aberta"
+
+### Fluxos Alternativos / Exceções
+- FA01 — Falha no registro
+
+### Relacionamentos
+- **Include: - ** 
+- **Extend: - **  
+
+### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+---## **UC06 — Consultar contas a receber**
+**Ator(es): Financeiro**  
+**Descrição: Visualiza contas**  
+**Pré-condições: Usuário logado**  
+**Pós-condições: Lista exibida**  
+
+### Fluxo Principal
+1. Acessa módulo
+2. Sistema lista as contas
+3. Aplica filtros
+
+### Fluxos Alternativos / Exceções
+- FA01 — Nenhuma conta encontrada
+
+### Relacionamentos
+- **Include: - ** 
+- **Extend: - **  
+
+### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+---## **UC07 — Registrar pagamento**
+**Ator(es): Financeiro**  
+**Descrição: Registra pagamento**  
+**Pré-condições: Conta existente**  
+**Pós-condições: Conta atualizada**  
+
+### Fluxo Principal
+1. Seleciona conta
+2. Confirma pagamento
+3. Sistema registra data
+4. Atualiza status
+
+### Fluxos Alternativos / Exceções
+- FA01 — Conta já paga 
+
+### Relacionamentos
+- **Include: Atualizar status** 
+- **Extend: Emitir comprovante**  
+
+### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+---## **UC08 — Atualizar status da conta**
+**Ator(es): Sistema**  
+**Descrição: Atualiza status**  
+**Pré-condições: Conta existente**  
+**Pós-condições: Status atualizado**  
+
+### Fluxo Principal
+1. Verifica pagamento
+2. Atualiza status
+
+### Fluxos Alternativos / Exceções
+- FA01 — Conta vencida -> status atrasado
+
+### Relacionamentos
+- **Include: - ** 
+- **Extend: - **  
+
+### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+---## **UC09 — Listar contas vencidas**
+**Ator(es): Financeiro**  
+**Descrição: Mostra contas atrasadas**  
+**Pré-condições: Sistema ativo**  
+**Pós-condições: Lista exibida**  
+
+### Fluxo Principal
+1. Acessa opção
+2. Sistema filtra vencidas
+3. Exibe lista
+
+### Fluxos Alternativos / Exceções
+- FA01 — Nenhuma conta vencida
+
+### Relacionamentos
+- **Include: - ** 
+- **Extend: - **  
+
+### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+---## **UC10 — Emitir comprovante de pagamento**
+**Ator(es): Financeiro**  
+**Descrição: Gerar comprovante**  
+**Pré-condições: Pagamento realizado**  
+**Pós-condições: Comprovante gerado**  
+
+### Fluxo Principal
+1. Solicita comprovante
+2. Sistema gera documento
+3. Exibe
+
+### Fluxos Alternativos / Exceções
+- FA01 — Erro na geração 
+
+### Relacionamentos
+- **Include: - ** 
+- **Extend: - **  
+
+### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+---
 
 
