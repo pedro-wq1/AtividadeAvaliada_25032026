@@ -63,8 +63,6 @@ Liste os RNFs do sistema conforme seu MVP.
 **RNF04 — Usabilidade**
           As operações financeiras devem ser simples e rápidas para o usuário.
 
-(Adicione mais se quiser.)
-
 ---
 
 # 5. Casos de Uso (mínimo: 10)
@@ -73,6 +71,8 @@ Liste os RNFs do sistema conforme seu MVP.
 - relação entre eles e atores
 - pelo menos 3 includes
 - pelo menos 3 extends
+
+<img width="409" height="869" alt="image" src="https://github.com/user-attachments/assets/127e2739-81a9-4471-8947-b13e04e48f56" />
 
 ---
 
